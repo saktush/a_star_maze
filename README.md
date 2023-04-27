@@ -1,7 +1,6 @@
 # a_star_maze
-a star maze solved in python
+A* (AStar) maze solved with python
 
-** solving maze from png file
-** saving result to png file
-
-** made with ChatGpt
+* solving maze from png file
+* saving result to png file
+* made with ChatGpt
