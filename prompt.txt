@@ -1,0 +1,28 @@
+Great. Let's write a python app, that can solve any maze with following conditions:
+1. on input we got .png file with mase (the picture will be provided locally, do not ask me for it)
+1.1 start position pixel is rgb(255,0,0)
+1.2 goal position pixel is rgb(0,0,255)
+1.3 waals in mase are pixels rgb(0,0,0)
+1.4 empty pixels can be rgb(255.255.255) or something close
+
+2. our goal is to show how astar search algorithm find a way from start to goal point with now crossing walls of the maze
+2.1 each visited pixel becane more green (up to 255) every time it visited
+2.2 if some pixels visited more than 255 times - the became more red (up to 255) every visit
+
+3. The maze is solved only when cursor from start moves to goal point using astar algorithm
+3.1 if here is no start or goal position in maze picture - show notification and ask for other picture
+3.2 if there is no way from start to goal position without crossing the wall - show notification and ask for other picture
+
+4. on output save [current_date_YYYY_MM_DD_HH_MM_solve].gif file with solving process - step by step animation to /data folder
+
+5. application window: main window with select (load) file button used to load image and "start" / "stop" buttons
+6. solving process should be visible in separate window and show full size image of maze with all changes in realtime
+
+Use cv2 anp numpy and helpful other  libraries for main logic
+Use tkinter to build flexible user interface.
+
+The application should work well on mac os and windows, should be called a_star_maze
+
+Do you have enough information to write this application?
+
+answer only "yes" or  "no" and wait for further instructions
