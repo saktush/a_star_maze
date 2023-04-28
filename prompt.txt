@@ -21,7 +21,7 @@ Great. Let's write a python app, that can solve any maze with following conditio
 Use cv2 anp numpy and helpful other  libraries for main logic
 Use tkinter to build flexible user interface.
 
-The application should work well on mac os and windows, should be called a_star_maze
+The application should work well on Mac Os and windows, should be called a_star_maze
 
 Do you have enough information to write this application?
 
