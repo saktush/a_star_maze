@@ -4,7 +4,7 @@ from queue import PriorityQueue
 from datetime import datetime
 from PIL import Image, ImageTk
 import tkinter as tk
-from tkinter import filedialog
+# from tkinter import filedialog
 
 
 class MazeSolver:
@@ -55,7 +55,7 @@ class MazeSolver:
         return abs(a[0] - b[0]) + abs(a[1] - b[1])
 
     def a_star_search(self):
-        start = self.start_pixel
+        start = tuple(self.start_pixel)
         end = self.end_pixel
 
         visited = {}
@@ -75,9 +75,10 @@ class MazeSolver:
         frontier = PriorityQueue()
         frontier.put(start, 0)
 
+
         while not frontier.empty():
             current = frontier.get()
-            if current == end:
+            if np.array_equal(current, end):
                 break
 
             for _next in self.get_neighbors(current):
@@ -92,9 +93,9 @@ class MazeSolver:
         # Backtrack the path from end to start
         path = []
         current = end
-        while current != start:
+        while not np.all(current == start):
             path.append(current)
-            current = came_from[current]
+            current = came_from[tuple(current)]
         path.append(start)
         path.reverse()
 
@@ -207,7 +208,7 @@ class MazeSolverGUI:
 
 def main():
     # Step 1: Create a MazeSolver instance
-    maze_solver = MazeSolver("path/to/maze/image")
+    maze_solver = MazeSolver("data/MAZES/MAZE_4.png")
 
     # Step 2: Find the path from start to end using A* search algorithm
     maze_solver.a_star_search()
@@ -216,7 +217,7 @@ def main():
     maze_gui = MazeSolverGUI(maze_solver)
 
     # Step 4: Show the GUI
-    maze_gui.show()
+    # maze_gui.show()
 
 
 if __name__ == '__main__':
